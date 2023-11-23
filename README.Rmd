@@ -45,7 +45,7 @@ This research compendium... **{{ DESCRIBE YOUR PROJECT }}**
 
 ## Features
 
-The main purpose of this compendium is to... **{{ DESCRIBE THE MAIN FEATURES }}**
+The main purpose of this compendium is to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin. A sub-goal is to make the workflow as reproducible as possible.
 
 
 
@@ -98,15 +98,13 @@ source("make.R")
 
 ## Citation
 
-Please use the following citation: 
-
-> **{{ ADD A CITATION }}**
+Nothing yet...
 
 
 
 ## Contributing
 
-All types of contributions are encouraged and valued. For more information, 
+All types of contributions are encouraged and valued. But no ALIENS ! For more information, 
 check out our [Contributor Guidelines](https://github.com/MCartereau/cesab_biodiversity/blob/main/CONTRIBUTING.md).
 
 Please note that this project is released with a 
@@ -117,10 +115,12 @@ By contributing to this project, you agree to abide by its terms.
 
 ## Acknowledgments
 
-Thanks to the cesab!!
+Thanks to the CESAB !!
 
 
 
 ## References
 
-Some papers here and there...
+> Marwick B, Boettiger C, Mullen L. 2018. Packaging data analytical work reproducibly using R (and friends) PeerJ Preprints 6:e3192v2 https://doi.org/10.7287/peerj.preprints.3192v2
+
+> Casajus N, Bonnici I, Dray S, Gimenez O, Guéry L, Guilhaumon F, Schiettekatte NMD & Siberchicot A (2023) Workshop FRB-CESAB & RT EcoStat: Reproducible Research in Computational Ecology. Zenodo. http://doi.org/10.5281/zenodo.4262978.

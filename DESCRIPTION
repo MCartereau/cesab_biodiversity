@@ -1,6 +1,6 @@
 Package: cesab_biodiversity
 Type: Package
-Title: The Title of the Project
+Title: Birds & Trees
 Version: 0.0.0.9000
 Authors@R: c(
     person(given   = "Manuel",
@@ -8,8 +8,7 @@ Authors@R: c(
            role    = c("aut", "cre", "cph"),
            email   = "manuel.cartereau@gmail.com",
            comment = c(ORCID = "0000-0002-4496-0527")))
-Description: A paragraph providing a full description of the project (on 
-    several lines...)
+Description: This project aims to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin.
 URL: https://github.com/MCartereau/cesab_biodiversity
 BugReports: https://github.com/MCartereau/cesab_biodiversity/issues
 License: GPL (>= 2)
