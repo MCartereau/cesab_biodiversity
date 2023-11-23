@@ -1,12 +1,12 @@
-#' Path spatial grid
+#' Get phylo data path
 #'
 #' @param filename 
 #'
-#' @return pathfile
+#' @return path
 #' @export
 #'
 #' @examples
-path_spat_grid <- function(filename) {
+path_phylo <- function(filename) {
   path <- here::here("data", "raw-data",filename)
   return(path)
 }
