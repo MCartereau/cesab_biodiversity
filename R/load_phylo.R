@@ -1,12 +1,10 @@
 #' Load tree files
 #' 
+#' @param filename 
 #'
-#' @param filename indicates the name of the tree file you want to load
-#'
-#' @return the path 
+#' @return tree data
 #' 
-load_phylo <- function (filename) {
-  path <- here::here("data", "raw-data")
-  ape::read.tree(paste0(path, '/', filename))
-  return(paste0(path, '/', filename))
+load_phylo <- function (path) {
+  data <- ape::read.tree(path)
+  return(data)
 } 
