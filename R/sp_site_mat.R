@@ -14,5 +14,5 @@ sp_site_mat <- function(data, taxon_to_filter) {
     dplyr::mutate(Presence = 1) |>
     dplyr::select(-1) |>
     tidyr::spread(Species, Presence, fill = 0)
- 
+ return(matrix)
 }
