@@ -1,5 +1,12 @@
 name|type|parent|branches|progress
-pathspatgrid|stem|pathspatgrid|0|started
-pathspatgrid|stem|pathspatgrid|0|built
-pathphylo|stem|pathphylo|0|started
-pathphylo|stem|pathphylo|0|errored
+pathspatgrid|stem|pathspatgrid|0|skipped
+pathphylo|stem|pathphylo|0|skipped
+pathtraits|stem|pathtraits|0|skipped
+pathocc|stem|pathocc|0|skipped
+load_spat|stem|load_spat|0|skipped
+load_phylogeny|stem|load_phylogeny|0|skipped
+load_traits|stem|load_traits|0|skipped
+load_occ|stem|load_occ|0|skipped
+select_occ|stem|select_occ|0|skipped
+format_sp_site|stem|format_sp_site|0|started
+format_sp_site|stem|format_sp_site|0|errored
