@@ -16,10 +16,6 @@ toc_float:
 library(kableExtra)
 devtools::load_all()
 
-load_csv
-load_spat_grid
-load_phylo
-
 ```
 
 ## Introduction
