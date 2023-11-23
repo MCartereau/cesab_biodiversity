@@ -11,7 +11,7 @@
 
 phy_rich <- function(data, phylo_data, taxon_id) {
   mat <- data|>
-    select(-Idgrid) |>
+    dplyr::select(-Idgrid) |>
     as.matrix()
   
   picante::pd(mat, phylo_data[[1]], include.root=FALSE) |>

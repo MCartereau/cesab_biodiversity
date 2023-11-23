@@ -1,6 +1,6 @@
 ---
-title: "Birds and trees ! Yippee !"
-author: "The Cool Team"
+title: "Birds and trees ! Yippees !"
+author: "The Awesome Team"
 date: today
 abstract: |
   Biodiversity facets of birds and trees across the Euro-Mediterranean Basin.
@@ -13,6 +13,7 @@ toc_float:
 ---
 
 ```{r setup, include = FALSE}
+
 library(kableExtra)
 devtools::load_all()
 
@@ -23,6 +24,13 @@ devtools::load_all()
 This project aims to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin.
 
 ## The workflow
+
+Here is a general overview of the functions, the data and the inter-connected links involved in the workflow. 
+
+```{r,  echo = FALSE}
+library(targets)
+targets::tar_mermaid()
+```
 
 ### Loading the data
 

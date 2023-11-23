@@ -39,14 +39,11 @@ cesab_biodiversity <img src="man/figures/compendium-sticker.png" align="right" s
 
 ## Overview
 
-This research compendium... **{{ DESCRIBE YOUR PROJECT }}**
-
-
+This research compendium was created in order to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin. A sub-goal is to make the workflow as reproducible as possible.
 
 ## Features
 
-The main purpose of this compendium is to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin. A sub-goal is to make the workflow as reproducible as possible.
-
+The main purpose of this compendium was to make an already written workflow into a more comprehensive, coherent and reproducible project. 
 
 
 ## Content
@@ -62,7 +59,16 @@ main R script to run the entire project
 - [`R/`](https://github.com/MCartereau/cesab_biodiversity/tree/main/R):
 contains R functions developed especially for this project
 
-- **{{ LIST ADDITIONAL FILES/FOLDER }}**
+- [`data/`](https://github.com/MCartereau/cesab_biodiversity/tree/main/data):
+contains raw- and derived-data. 
+
+Here you can view the functions and data as an inter-connected network using the **targets** R package : 
+
+```{r, results = "asis", echo = FALSE}
+cat(c("```{mermaid}", targets::tar_mermaid(), "```"), sep = "\n")
+```
+
+
 
 
 
