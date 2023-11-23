@@ -117,10 +117,10 @@ By contributing to this project, you agree to abide by its terms.
 
 ## Acknowledgments
 
-**{{ OPTIONAL SECTION }}**
+Thanks to the cesab!!
 
 
 
 ## References
 
-**{{ OPTIONAL SECTION }}**
+Some papers here and there...
