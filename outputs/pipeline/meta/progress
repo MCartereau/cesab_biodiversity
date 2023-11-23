@@ -7,6 +7,8 @@ load_spat|stem|load_spat|0|skipped
 load_phylogeny|stem|load_phylogeny|0|skipped
 load_traits|stem|load_traits|0|skipped
 load_occ|stem|load_occ|0|skipped
+select_traits|stem|select_traits|0|started
+select_traits|stem|select_traits|0|built
 select_occ|stem|select_occ|0|skipped
 format_sp_site|stem|format_sp_site|0|started
-format_sp_site|stem|format_sp_site|0|errored
+format_sp_site|stem|format_sp_site|0|built

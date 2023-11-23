@@ -25,37 +25,38 @@ tar_target(load_spat, load_spat_grid(pathspatgrid)),
 tar_target(select_occ, occ_select(load_occ, "50x50", "EUROMEDIT")),
 
 # Format species-site matrix
-tar_target(format_sp_site, sp_site_mat(select_occ)),
+tar_target(format_sp_site, sp_site_mat(select_occ, "Birds")),
 
 # Functional traits selection
-tar_target(select_traits, trait_select()),
+tar_target(select_traits, traits_select(load_traits, 
+                                        c("Mass", "Clutch_MEAN", "Beak.Depth")))
 
 
-## Compute indices
+# ## Compute indices
 # 
-# # Species richness
-tar_target(comp_sp_rich, ),
- 
-# Phylogenetic richness
-tar_target(comp_phylo_rich, ),
- 
-# Functional richness
-tar_target(comp_func_rich, ),
- 
- 
-## Combine richness indices
- 
-tar_target(comb_ind_rich, ),
- 
- 
-## Plot
- 
-tar_target(plot_map, ),
- 
-
-# ## Transpile report
-
-tar_target(t_report, ),
-
+# # # Species richness
+# tar_target(comp_sp_rich, ),
+#  
+# # Phylogenetic richness
+# tar_target(comp_phylo_rich, ),
+#  
+# # Functional richness
+# tar_target(comp_func_rich, ),
+#  
+#  
+# ## Combine richness indices
+#  
+# tar_target(comb_ind_rich, ),
+#  
+#  
+# ## Plot
+#  
+# tar_target(plot_map, ),
+#  
+# 
+# # ## Transpile report
+# 
+# tar_target(t_report, ),
+# 
 
 )
