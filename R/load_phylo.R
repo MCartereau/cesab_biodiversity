@@ -5,7 +5,7 @@
 #'
 #' @return the path 
 #' 
-load_csv <- function (filename) {
+load_phylo <- function (filename) {
   path <- here::here("data", "raw-data")
   ape::read.tree(paste0(path, '/', filename))
   return(paste0(path, '/', filename))

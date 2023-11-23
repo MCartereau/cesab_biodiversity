@@ -7,6 +7,7 @@
 #' @return the data frame we need for downstream analysis
 #' 
 occ_select <- function (data, grid, region) {
+  
   data |>
     filter(Grid == grid) |>
     filter(Region == region) |>

@@ -5,7 +5,7 @@
 #'
 #' @return the path 
 #' 
-load_csv <- function (filename) {
+load_spat_grid <- function (filename) {
   path <- here::here("data", "raw-data")
   sf::st_read(paste0(path, '/', filename))
   return(paste0(path, '/', filename))
