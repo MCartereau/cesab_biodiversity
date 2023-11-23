@@ -4,7 +4,7 @@
 #'
 #' @return tree data
 #' 
-load_phylo <- function (path) {
+load_phylo <- function(path) {
   data <- ape::read.tree(path)
   return(data)
 } 
