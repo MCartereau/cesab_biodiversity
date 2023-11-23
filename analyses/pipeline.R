@@ -5,11 +5,19 @@ targets::tar_source(here::here("R"))
 
 list(
 
-## Create path and read data--
-tar_target(load_occ, load_csv("INTEGRADIV_occurrences_ex.csv"), format = "file" ),
-tar_target(load_traits, load_csv("INTEGRADIV_traits_ex.csv"), format = "file" ),
-tar_target(load_phylo, load_phylo("INTEGRADIV_phylogenies_ex.csv"), format = "file" ),
-tar_target(load_spat, load_spat_grid("spgrid_50x50km_EUROMEDIT_EPSG3035.shp"), format = "file" )
+## Create path --
+tar_target(pathocc, path_occ("INTEGRADIV_occurrences_ex.csv"), format = "file"),
+tar_target(pathtraits, path_occ("INTEGRADIV_traits_ex.csv"), format = "file"),
+tar_target(pathphylo, path_occ("INTEGRADIV_phylogenies_ex.csv"), format = "file"),
+tar_target(pathspatgrid, path_spat_grid("spgrid_50x50km_EUROMEDIT_EPSG3035.shp"), format = "file"),
+  
+  
+## Read data--  
+tar_target(load_occ, load_csv(pathocc),
+tar_target(load_traits, load_csv(pathtraits)),
+tar_target(load_phylo, load_phylo(pathphylo)),
+tar_target(load_spat, load_spat_grid(pathspatgrid)),
+
 
 # 
 # ## Format data --
