@@ -5,7 +5,7 @@
 #'
 #' @return data
 #' 
-path_occ <- function (path) {
-  data <- utils::read.csv(here::here("data","raw-data",filename))
+load_csv <- function (path) {
+  data <- utils::read.csv(path)
 return(data)
 } 
