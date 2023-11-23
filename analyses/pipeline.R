@@ -13,10 +13,10 @@ tar_target(pathspatgrid, path_spat_grid("spgrid_50x50km_EUROMEDIT_EPSG3035.shp")
   
   
 ## Read data--  
-tar_target(load_occ, load_csv(pathocc),
+tar_target(load_occ, load_csv(pathocc)),
 tar_target(load_traits, load_csv(pathtraits)),
 tar_target(load_phylo, load_phylo(pathphylo)),
-tar_target(load_spat, load_spat_grid(pathspatgrid)),
+tar_target(load_spat, load_spat_grid(pathspatgrid))
 
 
 # 
