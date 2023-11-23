@@ -1,27 +1,185 @@
 ---
-title: "Biodiversity"
+title: "Birds and trees ! Yippee !"
 author: "The Cool Team"
-format: html
-editor: visual
+date: today
+abstract: |
+  Biodiversity facets of birds and trees across the Euro-Mediterranean Basin.
+format:
+  html:
+    theme: minty
+toc: true
+toc_float: 
+  collapsed: true
 ---
 
-## Quarto
+```{r setup, include = FALSE}
+library(kableExtra)
+devtools::load_all()
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+load_csv
+load_spat_grid
+load_phylo
 
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
 ```
 
-You can add options to executable code like this
+## Introduction
 
-```{r}
-#| echo: false
-2 * 2
+This project aims to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin.
+
+## The workflow
+
+### Loading the data
+
+First, let's load the data! 
+
+```{r, 'Occurence data', echo = TRUE, include = TRUE, results = FALSE}
+
+occ <- targets::tar_read(load_occ)
+
+head(occ)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+
+traits <- targets::tar_read(load_traits)
+
+head(traits)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
+```
+
+```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+
+phylo <- targets::tar_read(load_phylo)
+
+head(phylo)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
+```
+
+```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+
+spat <- targets::tar_read(load_spat)
+
+head(spat)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
+```
+
+### Format data
+
+Now, we shall select the occurrences data that we need (resolution = 50km, region = whole Euro-Mediterranean Basin).
+
+```{r, 'Select occurences', echo = TRUE, include = TRUE, results = TRUE}
+
+selected_occ <- targets::tar_read(select_occ)
+
+head(selected_occ)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
+```
+
+To compute the functional richness metric, we need species-sites matrices:
+
+```{r, 'Format species-site matrix', echo = TRUE, include = TRUE, results = TRUE}
+
+mat <- targets::tar_read(format_sp_site)
+
+head(mat)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+
+```
+
+Also, we need to select relevant traits!
+
+```{r, 'Functional trait sleection', echo = TRUE, include = TRUE, results = TRUE, message = FALSE, warning = FALSE}
+
+selected_traits <- targets::tar_read(select_traits)
+
+head(selected_traits)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+```
+
+### Compute diversity indices
+
+First, let's compute species richness!
+
+```{r, 'Species richness', echo = TRUE, include = TRUE, results = TRUE}
+sp_rich <- targets::tar_read(comp_sp_rich)
+
+head(sp_rich)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+```
+
+Then, let's compute Faith's phylogenetic diversity...
+
+```{r, 'Phylogenetic richness', echo = TRUE, include = TRUE, results = TRUE}
+phylo_rich <- targets::tar_read(comp_phylo_rich)
+
+head(phylo_rich)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+```
+
+Finally, let's compute functional richness (FRic metric)!
+
+```{r, 'Functional richness', echo = TRUE, include = TRUE, results = TRUE}
+func_rich <- targets::tar_read(comp_func_rich)
+
+head(func_rich)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+```
+
+### Combine the metrics
+
+Now let's gather the diversity metrics we computed within a single data frame:
+
+```{r, 'Combine richness indices', echo = TRUE, include = TRUE, results = TRUE}
+ind_rich <- targets::tar_read(comb_ind_rich)
+
+head(ind_rich)|> 
+  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
+  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
+  kable_styling(font_size = 14, position = "center") |>  
+  kable_styling(latex_options = "hold_position") 
+```
+
+### Visualise the results
+
+Finally, we're ready to plot the data and visualize beautiful maps ;) 
+
+```{r, echo = TRUE, fig.align = 'center', fig.dim = c(8, 6), include = TRUE}
+tar_read(plot_map)
+
+```
