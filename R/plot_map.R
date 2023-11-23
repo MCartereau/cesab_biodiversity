@@ -10,7 +10,7 @@
 #' @examples
 #' 
 
-plot_map <- function(grid, alpha_div, taxon) {
+plot_map <- function(grid, alpha_div, taxon_ids) {
   map <- left_join(grid, alpha_div, by=join_by(GRD_ID == Idgrid)) %>%
     na.omit()
   

@@ -18,17 +18,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports: 
     ape,
-    data.table,
-    devtools,
     dplyr,
     fundiversity,
-    heatmaply,
     here,
-    magrittr,
     picante,
     sf,
-    tarchetypes,
-    targets,
     tidyr,
-    tidyverse,
     utils

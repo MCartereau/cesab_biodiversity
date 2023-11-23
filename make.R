@@ -1,8 +1,8 @@
-#' cesab_biodiversity: A Research Compendium
+#' cesab_biodiversity: Biodiversity facets of birds and tree species across the Euro-Mediterranean Basin.
 #' 
 #' @description 
-#' A paragraph providing a full description of the project and describing each 
-#' step of the workflow.
+#' This project aims to map biodiversity facets (taxonomic, functional and phylogenetic) 
+#' for both breeding birds and trees across the Euro-Mediterranean Basin.
 #' 
 #' @author Manuel Cartereau \email{manuel.cartereau@gmail.com}
 #' 
