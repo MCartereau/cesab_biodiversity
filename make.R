@@ -9,7 +9,6 @@
 #' @date 2023/11/23
 
 
-
 ## Install Dependencies (listed in DESCRIPTION) ----
 
 devtools::install_deps(upgrade = "never")
@@ -18,6 +17,12 @@ devtools::install_deps(upgrade = "never")
 ## Load Project Addins (R Functions and Packages) ----
 
 devtools::load_all(here::here())
+
+## Configuration targets
+targets::tar_config_set(
+  store = "outputs/pipeline",
+  script = "analyses/pipeline.R"
+)
 
 
 ## Global Variables ----
@@ -29,3 +34,11 @@ devtools::load_all(here::here())
 
 # List all R scripts in a sequential order and using the following form:
 # source(here::here("analyses", "script_X.R"))
+
+<<<<<<< HEAD
+tar_make()
+=======
+# Load targets files 
+
+target_description <- read.csv(here::here("analyses","Targets.csv"))
+>>>>>>> 5ab5333bc6ff061c22e90fa8596cc947b9d759b6

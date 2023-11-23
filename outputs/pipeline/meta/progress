@@ -1,0 +1,5 @@
+name|type|parent|branches|progress
+pathspatgrid|stem|pathspatgrid|0|started
+pathspatgrid|stem|pathspatgrid|0|built
+pathphylo|stem|pathphylo|0|started
+pathphylo|stem|pathphylo|0|errored

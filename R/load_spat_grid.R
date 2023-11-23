@@ -1,12 +1,11 @@
 #' Load spatial grid
 #' 
 #'
-#' @param filename indicates the name of the spatial grid you want to load
+#' @param path 
 #'
-#' @return the path 
+#' @return spatial data
 #' 
-load_csv <- function (filename) {
-  path <- here::here("data", "raw-data")
-  sf::st_read(paste0(path, '/', filename))
-  return(paste0(path, '/', filename))
+load_spat_grid <- function (path) {
+  data <- sf::st_read(path)
+  return(data)
 } 

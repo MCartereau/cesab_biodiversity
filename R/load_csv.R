@@ -1,12 +1,11 @@
 #' Load csv files
 #' 
 #'
-#' @param filename indicates the name of the csv file you want to load
+#' @param path 
 #'
-#' @return the path 
+#' @return data
 #' 
-load_csv <- function (filename) {
-  path <- here::here("data", "raw-data")
-  read.csv(paste0(path, '/', filename))
-return(paste0(path, '/', filename))
+load_csv <- function (path) {
+  data <- utils::read.csv(path)
+return(data)
 } 
