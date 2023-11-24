@@ -14,7 +14,7 @@ knitr::opts_chunk$set(collapse  = TRUE,
 
 
 
-cesab_biodiversity <img src="figures/final_plot.pdf" align="right" style="float:right; height:120px;"/>
+cesab_biodiversity <img src="figures/final_plot.png" align="right" style="float:right; height:120px;"/>
 =========================================================
 
 <!-- badges: start -->

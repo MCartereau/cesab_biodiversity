@@ -34,7 +34,7 @@ plot_map <- function(grid, alpha_div, taxon_ids) {
     theme(panel.grid.major = element_line(colour = "lightgrey")) +
     theme(panel.background = element_rect(fill = NA, colour = "black"))
   
-  ggsave(filename = here::here("figures","final_plot.pdf"),
+  ggsave(filename = here::here("figures","final_plot.png"),
          plot = fig)
   
   return(fig)
