@@ -7,12 +7,18 @@ abstract: |
 format:
   html:
     theme: minty
+    code-fold: true
+    code-summary: "Show the code"
+    mermaid: 
+      theme: forest
 toc: true
 toc_float: 
   collapsed: true
+
 ---
 
-```{r setup, include = FALSE}
+```{r}
+#| include: FALSE
 
 library(kableExtra)
 devtools::load_all()
@@ -27,16 +33,22 @@ This project aims to map biodiversity facets (taxonomic, functional and phylogen
 
 Here is a general overview of the functions, the data and the inter-connected links involved in the workflow. 
 
-```{r,  echo = FALSE}
+```{r}
+#| echo: FALSE
+#| output: asis
+
 library(targets)
-targets::tar_mermaid()
+cat(c("```{mermaid}", targets::tar_mermaid(targets_only = TRUE, exclude = "index"), "```"), sep = "\n")
 ```
 
 ### Loading the data
 
 First, let's load the data! 
 
-```{r, 'Occurence data', echo = TRUE, include = TRUE, results = FALSE}
+```{r}
+#| label: 'Occurence data'
+#| echo: TRUE
+#| include: TRUE
 
 occ <- targets::tar_read(load_occ)
 
@@ -48,7 +60,11 @@ head(occ)|>
 
 ```
 
-```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+```{r}
+#| label: 'Trait data'
+#| echo: TRUE
+#| include: TRUE
+
 
 traits <- targets::tar_read(load_traits)
 
@@ -60,19 +76,23 @@ head(traits)|>
 
 ```
 
-```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+```{r}
+#| label: 'Phylogenetic data'
+#| echo: TRUE
+#| include: TRUE
 
-phylo <- targets::tar_read(load_phylo)
 
-head(phylo)|> 
-  knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
-  kableExtra::kable_styling(bootstrap_options = "striped", full_width = T) |> 
-  kable_styling(font_size = 14, position = "center") |>  
-  kable_styling(latex_options = "hold_position") 
+phylo <- targets::tar_read(load_phylogeny)
+
+plot(phylo) 
 
 ```
 
-```{r, 'Trait data', echo = TRUE, include = TRUE, results = FALSE}
+```{r}
+#| label: 'Spatial grid data'
+#| echo: TRUE
+#| include: TRUE
+
 
 spat <- targets::tar_read(load_spat)
 
@@ -88,7 +108,11 @@ head(spat)|>
 
 Now, we shall select the occurrences data that we need (resolution = 50km, region = whole Euro-Mediterranean Basin).
 
-```{r, 'Select occurences', echo = TRUE, include = TRUE, results = TRUE}
+```{r}
+#| label: 'Select occurences'
+#| echo: TRUE
+#| include: TRUE
+
 
 selected_occ <- targets::tar_read(select_occ)
 
@@ -100,11 +124,15 @@ head(selected_occ)|>
 
 ```
 
-To compute the functional richness metric, we need species-sites matrices:
+To compute the functional, phylogenetic and taxonomic richness metric, we need species-sites matrices specific to the species choses (e.g. Birds, Trees)
 
-```{r, 'Format species-site matrix', echo = TRUE, include = TRUE, results = TRUE}
+```{r}
+#| label: 'Example of format species-site matrix for Birds functional richness'
+#| echo: TRUE
+#| include: TRUE
 
-mat <- targets::tar_read(format_sp_site)
+
+mat <- targets::tar_read(format_sp_animal_func_site)
 
 head(mat)|> 
   knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
@@ -114,11 +142,15 @@ head(mat)|>
 
 ```
 
-Also, we need to select relevant traits!
+Also, we need to select relevant traits for the species
 
-```{r, 'Functional trait sleection', echo = TRUE, include = TRUE, results = TRUE, message = FALSE, warning = FALSE}
+```{r}
+#| label: 'Functional trait slection for Birds'
+#| echo: TRUE
+#| include: TRUE
 
-selected_traits <- targets::tar_read(select_traits)
+
+selected_traits <- targets::tar_read(select_animal_traits)
 
 head(selected_traits)|> 
   knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
@@ -131,7 +163,12 @@ head(selected_traits)|>
 
 First, let's compute species richness!
 
-```{r, 'Species richness', echo = TRUE, include = TRUE, results = TRUE}
+```{r}
+#| label: 'Species richness for birds and trees'
+#| echo: TRUE
+#| include: TRUE
+
+
 sp_rich <- targets::tar_read(comp_sp_rich)
 
 head(sp_rich)|> 
@@ -141,10 +178,15 @@ head(sp_rich)|>
   kable_styling(latex_options = "hold_position") 
 ```
 
-Then, let's compute Faith's phylogenetic diversity...
+Then, let's compute Faith's phylogenetic diversity for the Birds ! 
 
-```{r, 'Phylogenetic richness', echo = TRUE, include = TRUE, results = TRUE}
-phylo_rich <- targets::tar_read(comp_phylo_rich)
+```{r}
+#| label: 'Phylogenetic richness for birds'
+#| echo: TRUE
+#| include: TRUE
+
+
+phylo_rich <- targets::tar_read(comp_phylo_animal_rich)
 
 head(phylo_rich)|> 
   knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
@@ -153,10 +195,15 @@ head(phylo_rich)|>
   kable_styling(latex_options = "hold_position") 
 ```
 
-Finally, let's compute functional richness (FRic metric)!
+Finally, let's compute functional richness (FRic metric) for the Birds!
 
-```{r, 'Functional richness', echo = TRUE, include = TRUE, results = TRUE}
-func_rich <- targets::tar_read(comp_func_rich)
+```{r}
+#| label: 'Functional richness for birds'
+#| echo: TRUE
+#| include: TRUE
+
+
+func_rich <- targets::tar_read(comp_func_animal_rich)
 
 head(func_rich)|> 
   knitr::kable(booktabs = TRUE, linesep = "2pt", align = "c", row.names = FALSE) |> 
@@ -167,9 +214,14 @@ head(func_rich)|>
 
 ### Combine the metrics
 
-Now let's gather the diversity metrics we computed within a single data frame:
+Now let's gather the diversity metrics we computed within a single data frame for both birds and trees:
 
-```{r, 'Combine richness indices', echo = TRUE, include = TRUE, results = TRUE}
+```{r}
+#| label: 'Combine richness indices'
+#| echo: TRUE
+#| include: TRUE
+
+
 ind_rich <- targets::tar_read(comb_ind_rich)
 
 head(ind_rich)|> 
@@ -183,7 +235,13 @@ head(ind_rich)|>
 
 Finally, we're ready to plot the data and visualize beautiful maps ;) 
 
-```{r, echo = TRUE, fig.align = 'center', fig.dim = c(8, 6), include = TRUE}
-tar_read(plot_map)
+```{r}
+#| label: "Map of taxonomic, phylogenetic, and functional biodiversity of birds and trees across the Euro-Mediterranean Basin"
+#| echo: TRUE
+#| fig.align: 'center'
+#| include: TRUE
+
+g <- targets::tar_read(plot)
+plotly::ggplotly(g)
 
 ```
