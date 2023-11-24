@@ -1,5 +1,9 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-comb_ind_rich|stem|62271f203ff78d75|8126e13555b77595|8154a968193e7431|-60451760||t19685.4722679721s|529f6dbe85d2c4e4|27252|rds|local|vector|||0.44||
+.Random.seed|object|f7666baa08dc4c6c|||||||||||||||
+<<<<<<< HEAD|||||||||||||||||
+=======|||||||||||||||||
+>>>>>>> 018e6ba1b50d4f9ceec2e49f1470ef5932e7a4f8|||||||||||||||||
+comb_ind_rich|stem|62271f203ff78d75|8126e13555b77595|8154a968193e7431|-60451760||t19685.5108558525s|529f6dbe85d2c4e4|27252|rds|local|vector|||0.49||
 comp_animal_func_rich|stem|4f89eebc1b604057|f8f6592a653777db|7b24ba379a47e59b|1291256957||t19684.873538997s|8c39828cd6ba333b|7517|rds|local|vector|||18.53|Some sites had less species than traits so returned FRic is NA|
 comp_animal_phylo_rich|stem|e89ce02335829739|8420a0fb77cebe64|465afa507eddf1b2|-1850943669||t19684.8735452103s|1ff0235c64586bb2|2385|rds|local|vector|||0.42|drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. Rooted tree and include.rootTRUE argument required to calculate PD of singlespecies communities. Single species community assigned PD value of NA.. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop all tips of the tree returning NULL. drop a|
 comp_func_animal_rich|stem|d36ae202ce8cc04c|1c1b9cb63cb225b3|0da579b1941015f9|-198350165||t19685.4405352173s|627e0880688bc0d0|7514|rds|local|vector|||16.39|Some sites had less species than traits so returned FRic is NA|
@@ -20,6 +24,7 @@ func_rich|function|f3e01db393361b40|||||||||||||||
 id_phy|stem|d7378e747666f0e7|01fecce0493d2826|3d67bb0bd59bcd96|195704683||t19685.4405352751s|fcfe62a03dbab993|11287|rds|local|vector|||0.28||
 id_phylo|function|480871ebc208566a|||||||||||||||
 ind_rich|function|c1156cc4197cf3dd|||||||||||||||
+index|stem|d3b4da0fe99db142|82f8a07eacc3bc95|f7a56cb96d6982ec|-1857023687|index.html*index_files*index.qmd|t19685.5117391852s|e6bc981b0b7f0f15|6878915|file|local|vector|||22.59||
 load_animal_traits|stem|e2df67a1f492951e|a11e4cb95d429b2a|1fd70fd71ec31581|991145163||t19684.8699560522s|6d29d473fc5083c2|33902|rds|local|vector|||0.02||
 load_csv|function|66f712f1137fa546|||||||||||||||
 load_occ|stem|6d0f67b314d2f56f|66237c9cce3bb92a|c6c5b2580b84272e|415824769||t19685.3521992046s|39b8fc588abfc81c|462996|rds|local|vector|||0.58||
@@ -28,6 +33,7 @@ load_phylogeny|stem|a994069dadcfbef1|8dfdbcad6310bb86|b7fcb42adaef803e|103469780
 load_spat|stem|06f8720066101c49|bdc1b2053173d64d|22f051a719f8c943|-1682609090||t19685.3521992277s|9b350e673f1a5885|43379|rds|local|vector|||0.63||
 load_spat_grid|function|a5ce348334430d1c|||||||||||||||
 load_traits|stem|e2df67a1f492951e|a11e4cb95d429b2a|1fd70fd71ec31581|-1620385280||t19685.3521992277s|6d29d473fc5083c2|33902|rds|local|vector|||0.02||
+mermaid_graph|stem||11517ad94a26d8c5|ef46db3751d8e999|-887724288||t19685.4373593123s||0|rds|local|vector|||0||largument store est manquant, avec aucune valeur par défaut
 occ_select|function|35e3f99a65c1501e|||||||||||||||
 path_occ|function|bad7cd4a300e2af0|||||||||||||||
 path_phylo|function|bad7cd4a300e2af0|||||||||||||||

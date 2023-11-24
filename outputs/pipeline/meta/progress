@@ -20,7 +20,7 @@ comp_phylo_tree_rich|stem|comp_phylo_tree_rich|0|skipped
 comp_func_animal_rich|stem|comp_func_animal_rich|0|skipped
 comp_func_tree_rich|stem|comp_func_tree_rich|0|skipped
 comp_phylo_animal_rich|stem|comp_phylo_animal_rich|0|skipped
-comb_ind_rich|stem|comb_ind_rich|0|started
-comb_ind_rich|stem|comb_ind_rich|0|built
-plot|stem|plot|0|started
-plot|stem|plot|0|built
+comb_ind_rich|stem|comb_ind_rich|0|skipped
+plot|stem|plot|0|skipped
+index|stem|index|0|started
+index|stem|index|0|built

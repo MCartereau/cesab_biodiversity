@@ -61,12 +61,11 @@ tar_target(comb_ind_rich, ind_rich(comp_sp_rich,
  
 ## Plot
  
-tar_target(plot, plot_map(load_spat, comb_ind_rich, c("Trees", "Birds")))
+tar_target(plot, plot_map(load_spat, comb_ind_rich, c("Trees", "Birds"))),
  
 
-# ## Transpile report
-
-# tarchetypes::tar_quarto(index, path = here::here("index.qmd"))
+# Transpile report
+tarchetypes::tar_quarto(index,  path = "index.qmd")
 
 
 )
