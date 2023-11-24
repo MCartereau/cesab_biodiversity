@@ -62,16 +62,6 @@ contains R functions developed especially for this project
 - [`data/`](https://github.com/MCartereau/cesab_biodiversity/tree/main/data):
 contains raw- and derived-data. 
 
-Here you can view the functions and data as an inter-connected network using the **targets** R package : 
-
-```{r, results = "asis", echo = FALSE}
-cat(c("```{mermaid}", targets::tar_mermaid(), "```"), sep = "\n")
-```
-
-
-
-
-
 ## Installation
 
 To install this compendium:
