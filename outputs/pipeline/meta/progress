@@ -7,13 +7,11 @@ load_spat|stem|load_spat|0|skipped
 load_phylogeny|stem|load_phylogeny|0|skipped
 load_animal_traits|stem|load_animal_traits|0|skipped
 load_occ|stem|load_occ|0|skipped
-select_animal_traits|stem|select_animal_traits|0|skipped
+select_traits|stem|select_traits|0|started
+select_traits|stem|select_traits|0|built
 select_occ|stem|select_occ|0|skipped
 format_sp_tree_site|stem|format_sp_tree_site|0|skipped
 format_sp_animal_site|stem|format_sp_animal_site|0|skipped
 comp_sp_rich|stem|comp_sp_rich|0|skipped
-comp_tree_phylo_rich|stem|comp_tree_phylo_rich|0|skipped
-comp_animal_func_rich|stem|comp_animal_func_rich|0|skipped
-comp_animal_phylo_rich|stem|comp_animal_phylo_rich|0|skipped
-comb_ind_rich|stem|comb_ind_rich|0|started
-comb_ind_rich|stem|comb_ind_rich|0|errored
+comp_tree_func_rich|stem|comp_tree_func_rich|0|started
+comp_tree_func_rich|stem|comp_tree_func_rich|0|errored
