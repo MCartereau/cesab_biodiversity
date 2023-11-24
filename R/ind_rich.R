@@ -1,4 +1,4 @@
-#' Title
+#' Combine all the different processed data resuming the different facets of diversity into one
 #'
 #' @param data_tax 
 #' @param data_func_anim 
@@ -25,5 +25,9 @@ ind_rich <- function(data_tax, data_func_anim, data_func_trees, data_phy_anim, d
                              grepl("taxo", Variable) ~ "Taxonomic",
                              grepl("phylo", Variable) ~ "Phylogenetic")) |>
     dplyr::mutate(Taxon = dplyr::case_when(grepl("ird", Variable) ~ "Birds",
-                             grepl("ree", Variable) ~ "Trees")) 
+                             grepl("ree", Variable) ~ "Trees"))
+  
+  utils::write.csv(alpha_div,here::here("outputs","alpha_div.csv"))
+  
+  return(alpha_div)
 }

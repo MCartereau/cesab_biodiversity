@@ -35,6 +35,8 @@ targets::tar_config_set(
 # List all R scripts in a sequential order and using the following form:
 # source(here::here("analyses", "script_X.R"))
 
+targets::tar_visnetwork()
 
 targets::tar_make()
+
 

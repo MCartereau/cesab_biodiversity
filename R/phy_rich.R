@@ -14,7 +14,7 @@ phy_rich <- function(data, phylo_data, taxon_id) {
     dplyr::select(-Idgrid) |>
     as.matrix()
   
-  picante::pd(mat, phylo_data[[1]], include.root=FALSE) |>
+  picante::pd(mat, phylo_data[[taxon_id]], include.root=FALSE) |>
     dplyr::bind_cols(data[,1]) |>
     dplyr::rename(Idgrid = ...3) |>
     dplyr::mutate(Variable = paste("aphylo", taxon_id, sep="")) |>
