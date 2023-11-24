@@ -19,6 +19,8 @@ Imports:
     ape,
     dplyr,
     fundiversity,
+    ggplot2,
+    heatmaply,
     here,
     picante,
     sf,

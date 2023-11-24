@@ -21,12 +21,11 @@
 
 ## Overview
 
-This research compendium… **{{ DESCRIBE YOUR PROJECT }}**
+This research compendium was created in order to map biodiversity facets (taxonomic, functional and phylogenetic) for both breeding birds and trees across the Euro-Mediterranean Basin. A sub-goal is to make the workflow as reproducible as possible.
 
 ## Features
 
-The main purpose of this compendium is to… **{{ DESCRIBE THE MAIN
-FEATURES }}**
+The main purpose of this compendium was to make an already written workflow into a more comprehensive, coherent and reproducible project. 
 
 ## Content
 
@@ -41,7 +40,16 @@ This repository is structured as follow:
 -   [`R/`](https://github.com/MCartereau/cesab_biodiversity/tree/main/R):
     contains R functions developed especially for this project
 
--   **{{ LIST ADDITIONAL FILES/FOLDER }}**
+- [`data/`](https://github.com/MCartereau/cesab_biodiversity/tree/main/data):
+contains raw- and derived-data.
+
+Here you can view the functions and data as an inter-connected network using the **targets** R package : 
+
+```{r, results = "asis", echo = FALSE}
+cat(c("```{mermaid}", targets::tar_mermaid(), "```"), sep = "\n")
+```
+
+
 
 ## Installation
 
@@ -72,9 +80,8 @@ file with:
 
 ## Citation
 
-Please use the following citation:
+Nothing yet...
 
-> **{{ ADD A CITATION }}**
 
 ## Contributing
 
@@ -88,8 +95,11 @@ By contributing to this project, you agree to abide by its terms.
 
 ## Acknowledgments
 
-**{{ OPTIONAL SECTION }}**
+Thanks to Cesab !!
 
 ## References
 
-**{{ OPTIONAL SECTION }}**
+
+> Marwick B, Boettiger C, Mullen L. 2018. Packaging data analytical work reproducibly using R (and friends) PeerJ Preprints 6:e3192v2 https://doi.org/10.7287/peerj.preprints.3192v2
+
+> Casajus N, Bonnici I, Dray S, Gimenez O, Guéry L, Guilhaumon F, Schiettekatte NMD & Siberchicot A (2023) Workshop FRB-CESAB & RT EcoStat: Reproducible Research in Computational Ecology. Zenodo. http://doi.org/10.5281/zenodo.4262978.
