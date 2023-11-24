@@ -18,12 +18,12 @@ ind_rich <- function(data_tax, data_func_anim, data_func_trees, data_phy_anim, d
     tidyr::spread(Variable, Value) |>
     dplyr::filter(ataxobird >= 5 | ataxotree >= 5) |>
     na.omit() |>
-    dplyr::mutate(dplyr::across(afuncbird:ataxotree, normalize)) |> 
+    dplyr::mutate(dplyr::across(afuncBirds:ataxotree, heatmaply::normalize)) |> 
     tidyr::pivot_longer(!Idgrid, names_to="Variable", values_to = "Value") |>
     dplyr::mutate(Dimension = "Alpha") |>
-    dplyr::mutate(Facet = case_when(grepl("func", Variable) ~ "Functional",
+    dplyr::mutate(Facet = dplyr::case_when(grepl("func", Variable) ~ "Functional",
                              grepl("taxo", Variable) ~ "Taxonomic",
                              grepl("phylo", Variable) ~ "Phylogenetic")) |>
-    dplyr::mutate(Taxon = case_when(grepl("bird", Variable) ~ "Birds",
-                             grepl("tree", Variable) ~ "Trees")) 
+    dplyr::mutate(Taxon = dplyr::case_when(grepl("ird", Variable) ~ "Birds",
+                             grepl("ree", Variable) ~ "Trees")) 
 }

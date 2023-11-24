@@ -11,13 +11,16 @@
 #' 
 
 plot_map <- function(grid, alpha_div, taxon_ids) {
-  map <- left_join(grid, alpha_div, by=join_by(GRD_ID == Idgrid)) %>%
+  library(ggplot2)
+  library(sf)
+
+  map <- dplyr::left_join(grid, alpha_div, by= dplyr::join_by(GRD_ID == Idgrid)) |>
     na.omit()
   
   fig <- 
-    ggplot(map %>%
-             mutate(Facet_f = factor(Facet, levels=c("Taxonomic", "Phylogenetic", "Functional"))) %>%
-             mutate(Taxon_f = factor(Taxon, levels=c(taxon)))) +
+    ggplot2::ggplot(map |>
+             dplyr::mutate(Facet_f = factor(Facet, levels=c("Taxonomic", "Phylogenetic", "Functional"))) |>
+             dplyr::mutate(Taxon_f = factor(Taxon, levels=c(taxon_ids)))) +
     geom_sf(aes(fill = Value)) +
     scale_fill_gradient2(low="darkgoldenrod1", high="darkcyan", mid="white", midpoint=0.5) +
     facet_grid(Facet_f~Taxon_f) +

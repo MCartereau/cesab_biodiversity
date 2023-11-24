@@ -25,7 +25,7 @@ func_rich <- function(data, data_mat, taxon_id) {
     fundiversity::fd_fric(data_mat) |>
     dplyr::bind_cols(data_mat[,1]) |>
     dplyr::rename(Idgrid = ...3) |>
-    dplyr::mutate(Variable = "afuncbird") |>
+    dplyr::mutate(Variable = paste("afunc", taxon_id, sep="")) |> 
     dplyr::mutate(Dimension = "Alpha") |>
     dplyr::mutate(Facet = "Functional") |>
     dplyr::mutate(Taxon = taxon_id) |>
