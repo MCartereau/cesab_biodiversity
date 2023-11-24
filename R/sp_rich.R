@@ -1,6 +1,6 @@
-#' Title
+#' Function to set the species richness per grid mesh
 #'
-#' @param data 
+#' @param data species occurence per grid mesh  
 #'
 #' @return
 #' @export
@@ -17,6 +17,7 @@ sp_rich <- function(data) {
     dplyr::mutate(Variable = dplyr::case_when(Taxon == "Birds" ~ "ataxobird",
                                 Taxon == "Trees" ~ "ataxotree")) |>
     dplyr::select(c("Idgrid", "Value", "Variable", "Dimension", "Facet", "Taxon"))
+
 }
 
 
