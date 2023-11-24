@@ -240,8 +240,8 @@ Finally, we're ready to plot the data and visualize beautiful maps ;)
 #| echo: TRUE
 #| fig.align: 'center'
 #| include: TRUE
+#| out-width: 100%
 
-g <- targets::tar_read(plot)
-plotly::ggplotly(g)
+targets::tar_read(plot)
 
 ```

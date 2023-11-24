@@ -4,8 +4,11 @@ format: html
 ---
 
 ```{r}
-#| echo: FALSE
-#| output: asis
-library(targets)
-cat(c("```{mermaid}", targets::tar_mermaid(targets_only = TRUE), "```"), sep = "\n")
+#| label: "Map of taxonomic, phylogenetic, and functional biodiversity of birds and trees across the Euro-Mediterranean Basin"
+#| echo: TRUE
+#| fig.align: 'center'
+#| include: TRUE
+#| out-width: 100%
+#| fig-height: 200%
+targets::tar_read(plot)
 ```

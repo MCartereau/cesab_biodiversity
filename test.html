@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,9 +67,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="test_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="test_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="test_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="test_files/libs/quarto-diagram/mermaid.min.js"></script>
-<script src="test_files/libs/quarto-diagram/mermaid-init.js"></script>
-<link href="test_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 </head>
@@ -63,58 +94,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="cell">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>targets<span class="sc">::</span><span class="fu">tar_read</span>(plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  style Legend fill:#FFFFFF00,stroke:#000000;
-  style Graph fill:#FFFFFF00,stroke:#000000;
-  subgraph Legend
-    direction LR
-    x7420bd9270f8d27d([""Up to date""]):::uptodate --- x4b0c520b8bc07c5b([""Errored""]):::errored
-    x4b0c520b8bc07c5b([""Errored""]):::errored --- xbf4603d6c2c2ad6b([""Stem""]):::none
-  end
-  subgraph Graph
-    direction LR
-    xbb143773a1cb2b23(["select_occ"]):::uptodate --&gt; xb77fdba8fe3ce685(["format_sp_tree_phylo_site"]):::uptodate
-    xbb143773a1cb2b23(["select_occ"]):::uptodate --&gt; x3a50c4b31ed650b8(["format_sp_animal_func_site"]):::uptodate
-    xfbd05326285103da(["load_occ"]):::uptodate --&gt; xbb143773a1cb2b23(["select_occ"]):::uptodate
-    x05c6a7962a94a2d8(["load_traits"]):::uptodate --&gt; x27e5e988aa202d09(["select_tree_traits"]):::uptodate
-    xa532f974b8539006(["pathphylo"]):::uptodate --&gt; x835f247752e07f06(["load_phylogeny"]):::uptodate
-    xb12b2829b3667540(["pathtraits"]):::uptodate --&gt; x05c6a7962a94a2d8(["load_traits"]):::uptodate
-    x05c6a7962a94a2d8(["load_traits"]):::uptodate --&gt; xb34ffc6bb734487f(["select_animal_traits"]):::uptodate
-    x366ee266f52e31e4(["pathocc"]):::uptodate --&gt; xfbd05326285103da(["load_occ"]):::uptodate
-    x9746313bdc7c85a4(["format_sp_tree_func_site"]):::uptodate --&gt; xd48af25bd279de3b(["comp_func_tree_rich"]):::uptodate
-    x27e5e988aa202d09(["select_tree_traits"]):::uptodate --&gt; xd48af25bd279de3b(["comp_func_tree_rich"]):::uptodate
-    x3a50c4b31ed650b8(["format_sp_animal_func_site"]):::uptodate --&gt; x2ab28b4fab5a8e99(["comp_func_animal_rich"]):::uptodate
-    xb34ffc6bb734487f(["select_animal_traits"]):::uptodate --&gt; x2ab28b4fab5a8e99(["comp_func_animal_rich"]):::uptodate
-    xf8d96fc6b141462f(["pathspatgrid"]):::uptodate --&gt; x9c6bb4d922c76b6c(["load_spat"]):::uptodate
-    xbb143773a1cb2b23(["select_occ"]):::uptodate --&gt; x55d7a6f684a267a2(["format_sp_animal_phylo_site"]):::uptodate
-    xbb143773a1cb2b23(["select_occ"]):::uptodate --&gt; x9746313bdc7c85a4(["format_sp_tree_func_site"]):::uptodate
-    xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate --&gt; xaf95534ce5e3f59e(["plot"]):::uptodate
-    x9c6bb4d922c76b6c(["load_spat"]):::uptodate --&gt; xaf95534ce5e3f59e(["plot"]):::uptodate
-    x835f247752e07f06(["load_phylogeny"]):::uptodate --&gt; xd7c7c752663c12a8(["id_phy"]):::uptodate
-    xb77fdba8fe3ce685(["format_sp_tree_phylo_site"]):::uptodate --&gt; xaeba6499a5806039(["comp_phylo_tree_rich"]):::uptodate
-    xd7c7c752663c12a8(["id_phy"]):::uptodate --&gt; xaeba6499a5806039(["comp_phylo_tree_rich"]):::uptodate
-    x2ab28b4fab5a8e99(["comp_func_animal_rich"]):::uptodate --&gt; xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate
-    xd48af25bd279de3b(["comp_func_tree_rich"]):::uptodate --&gt; xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate
-    x034a42cc613af076(["comp_phylo_animal_rich"]):::uptodate --&gt; xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate
-    xaeba6499a5806039(["comp_phylo_tree_rich"]):::uptodate --&gt; xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate
-    xe296c6a724b63249(["comp_sp_rich"]):::uptodate --&gt; xd0644b34ec4cf8ef(["comb_ind_rich"]):::uptodate
-    xbb143773a1cb2b23(["select_occ"]):::uptodate --&gt; xe296c6a724b63249(["comp_sp_rich"]):::uptodate
-    x55d7a6f684a267a2(["format_sp_animal_phylo_site"]):::uptodate --&gt; x034a42cc613af076(["comp_phylo_animal_rich"]):::uptodate
-    xd7c7c752663c12a8(["id_phy"]):::uptodate --&gt; x034a42cc613af076(["comp_phylo_animal_rich"]):::uptodate
-    xc296e0de266023da(["mermaid_graph"]):::errored --&gt; xc296e0de266023da(["mermaid_graph"]):::errored
-  end
-  classDef uptodate stroke:#000000,color:#ffffff,fill:#354823;
-  classDef errored stroke:#000000,color:#ffffff,fill:#C93312;
-  classDef none stroke:#000000,color:#000000,fill:#94a4ac;
-  linkStyle 0 stroke-width:0px;
-  linkStyle 1 stroke-width:0px;
-  linkStyle 30 stroke-width:0px;
-</pre>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="test_files/figure-html/Map%20of%20taxonomic,%20phylogenetic,%20and%20functional%20biodiversity%20of%20birds%20and%20trees%20across%20the%20Euro-Mediterranean%20Basin-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+</figure>
 </div>
 </div>
 </div>
