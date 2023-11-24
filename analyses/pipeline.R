@@ -37,8 +37,8 @@ tar_target(select_traits, traits_select(load_traits, c("Mass", "Clutch_MEAN", "B
 tar_target(comp_sp_rich, sp_rich(select_occ)),
 
 # 5.2 - Phylogenetic richness
-tar_target(comp_tree_phylo_rich, phy_rich(format_sp_tree_site, load_phylogeny, taxon_id = "Trees")),
-tar_target(comp_animal_phylo_rich, phy_rich(format_sp_animal_site, load_phylogeny, "Birds")),
+tar_target(comp_tree_phylo_rich, phy_rich(, load_phylogeny, taxon_id = "Trees")),
+tar_target(comp_animal_phylo_rich, phy_rich(, load_phylogeny, "Birds")),
 
 # 5.3 - Functional richness
 tar_target(comp_tree_func_rich, func_rich(select_traits, format_sp_tree_site, taxon_id = "Trees")),
