@@ -12,7 +12,7 @@
 #' @examples
 
 ind_rich <- function(data_tax, data_func_anim, data_func_trees, data_phy_anim, data_phy_trees) {
-  alpha_div <- dplyr::bind_rows(data_tax, data_func_anim, data_func_trees, data_phy_anim, data_phy_trees) |>
+  alpha_div <- dplyr::bind_rows(dplyr::ungroup(data_tax), data_func_anim, data_func_trees, data_phy_anim, data_phy_trees) |>
     dplyr::ungroup() |>
     dplyr::select(c("Idgrid", "Variable", "Value")) |>
     tidyr::spread(Variable, Value) |>
